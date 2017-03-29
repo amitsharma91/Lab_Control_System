@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -88,11 +89,9 @@ public class DeleteTeacher extends JFrame implements ActionListener {
 		textField.setColumns(10);
 
 		JButton btnDeleteRecord = new JButton("Delete Record");
-		// Image imgLogin = new
-		// ImageIcon(this.getClass().getResource("/delete.png")).getImage();
-		// Image newimgLogin = imgLogin.getScaledInstance(20, 20,
-		// java.awt.Image.SCALE_SMOOTH);
-		// btnDeleteRecord.setIcon(new ImageIcon(newimgLogin));
+		Image imgLoginbtnDeleteRecord = new ImageIcon(this.getClass().getResource("img/ic_delete.png")).getImage();
+		Image newimgLoginbtnDeleteRecord = imgLoginbtnDeleteRecord.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		btnDeleteRecord.setIcon(new ImageIcon(newimgLoginbtnDeleteRecord));
 		btnDeleteRecord.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
 		btnDeleteRecord.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
 		btnDeleteRecord.setForeground(new Color(102, 102, 204));

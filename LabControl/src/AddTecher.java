@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -10,6 +11,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,6 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 import DBManager.DBManager;
@@ -59,10 +62,10 @@ public class AddTecher extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblAddNewFaculty = new JLabel("Add New faculty");
+		JLabel lblAddNewFaculty = new JLabel("Register New Teacher");
 		lblAddNewFaculty.setForeground(new Color(255, 255, 51));
 		lblAddNewFaculty.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblAddNewFaculty.setBounds(115, 11, 201, 24);
+		lblAddNewFaculty.setBounds(130, 11, 201, 24);
 		contentPane.add(lblAddNewFaculty);
 
 		JLabel lblFacultyName = new JLabel("Faculty Name:");
@@ -111,7 +114,15 @@ public class AddTecher extends JFrame {
 		passwordField_1.setBounds(228, 159, 143, 20);
 		contentPane.add(passwordField_1);
 
-		JButton btnAdd = new JButton("Add ");
+		JButton btnAdd = new JButton("Register Teacher");
+		btnAdd.setMnemonic('l');
+		Image imgLogin = new ImageIcon(this.getClass().getResource("img/register.png")).getImage();
+		Image newimgLogin = imgLogin.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		btnAdd.setIcon(new ImageIcon(newimgLogin));
+		btnAdd.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+		btnAdd.setForeground(new Color(102, 102, 204));
+		btnAdd.setBackground(new Color(255, 153, 0));
+		btnAdd.setToolTipText("Click here to Add Teacher");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -165,16 +176,9 @@ public class AddTecher extends JFrame {
 				}
 			}
 		});
-		btnAdd.setBounds(90, 201, 89, 23);
+		btnAdd.setBounds(166, 201, 137, 31);
 		contentPane.add(btnAdd);
 		contentPane.setBackground(new Color(204, 0, 102));
-		JButton btnRemove = new JButton("Clear");
-		btnRemove.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnRemove.setBounds(216, 201, 89, 23);
-		contentPane.add(btnRemove);
 		setIconImage(new ImageIcon("src/img/lab.png").getImage());
 		setVisible(true);
 		setResizable(false);

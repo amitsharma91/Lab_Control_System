@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -9,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 import DBManager.DBManager;
@@ -61,10 +64,10 @@ public class AddStudent extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblAddNewStudent = new JLabel("Add New Student");
+		JLabel lblAddNewStudent = new JLabel("Register New Student");
 		lblAddNewStudent.setForeground(Color.YELLOW);
 		lblAddNewStudent.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblAddNewStudent.setBounds(106, 23, 208, 29);
+		lblAddNewStudent.setBounds(135, 24, 208, 29);
 		contentPane.add(lblAddNewStudent);
 
 		JLabel lblStudentName = new JLabel("Student Name:");
@@ -113,11 +116,15 @@ public class AddStudent extends JFrame {
 		passwordField_1.setBounds(237, 187, 96, 20);
 		contentPane.add(passwordField_1);
 
-		JButton btnNewButton_1 = new JButton("Remove");
-		btnNewButton_1.setBounds(237, 227, 109, 23);
-		contentPane.add(btnNewButton_1);
-
-		JButton btnRegister = new JButton("Register");
+		JButton btnRegister = new JButton("Register Student");
+		btnRegister.setMnemonic('l');
+		Image imgLogin = new ImageIcon(this.getClass().getResource("img/register.png")).getImage();
+		Image newimgLogin = imgLogin.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		btnRegister.setIcon(new ImageIcon(newimgLogin));
+		btnRegister.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+		btnRegister.setForeground(new Color(102, 102, 204));
+		btnRegister.setBackground(new Color(255, 153, 0));
+		btnRegister.setToolTipText("Click here to Register");
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(textField.getText().trim().equals("") || textField_1.getText().trim().equals("") || String.valueOf(passwordField.getPassword()).equals("") || String.valueOf(passwordField_1.getPassword()).equals("")){
@@ -174,7 +181,7 @@ public class AddStudent extends JFrame {
 				}				
 			}
 		});
-		btnRegister.setBounds(80, 227, 118, 23);
+		btnRegister.setBounds(176, 226, 138, 35);
 		contentPane.add(btnRegister);
 		contentPane.setBackground(new Color(204, 0, 102));
 		

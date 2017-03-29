@@ -35,6 +35,7 @@ public class TeacherMainConsole extends JFrame {
 	public static void main(String[] args) {
 		// TeacherMainConsole.main = Thread.currentThread();
 		new TeacherMainConsole("username");
+		
 		/*
 		 * EventQueue.invokeLater(new Runnable() { public void run() { try {
 		 * TeacherMainConsole frame = new TeacherMainConsole();
@@ -58,8 +59,7 @@ public class TeacherMainConsole extends JFrame {
 		tabbedPane.setBounds(10, 36, 608, 422);
 		tabbedPane.add("      Home      ", new TecherHome());
 		tabbedPane.add("   ScreenShots  ", new TeacherScreenShot());
-		tabbedPane.add("      Chats     ", new TeacherChatHome());
-		tabbedPane.add(" Get Client IP's", new TeacherGetStudentsList());
+		tabbedPane.add("  Student's Log ", new TeacherViewsStudentsLogs());
 		contentPane.add(tabbedPane);
 
 		btnLogout = new JButton("Logout");
@@ -102,7 +102,7 @@ public class TeacherMainConsole extends JFrame {
 		setVisible(true);
 		System.out.println(getWidth() + " ---- " + getHeight());
 		// ****************************************************************//
-
+		
 		// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&//
 		SwingWorker<String, String> workerUSB = new SwingWorker<String, String>() {
 

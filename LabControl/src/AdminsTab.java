@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -37,11 +38,14 @@ public class AdminsTab extends JFrame {
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setForeground(new Color(255, 255, 255));
-		menuBar.setBackground(new Color(204, 102, 0));
+		menuBar.setBackground(new Color(255, 204, 102));
 		setJMenuBar(menuBar);
 
-		JMenu mnAdd = new JMenu("Add");
-		mnAdd.setForeground(new Color(255, 255, 255));
+		JMenu mnAdd = new JMenu("  Add     ");
+		Image imgLogin = new ImageIcon(this.getClass().getResource("img/newUser.png")).getImage();
+		Image newimgLogin = imgLogin.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		mnAdd.setIcon(new ImageIcon(newimgLogin));
+		mnAdd.setForeground(new Color(204, 0, 0));
 		mnAdd.setBackground(new Color(204, 153, 153));
 		// mnAdd.setFont(new Font("Times New Roman", Font.BOLD, 17));
 		menuBar.add(mnAdd);
@@ -80,8 +84,11 @@ public class AdminsTab extends JFrame {
 		});
 		mnAdd.add(mntmTeacher);
 
-		JMenu mnRemove = new JMenu("Remove");
-		mnRemove.setForeground(new Color(255, 255, 255));
+		JMenu mnRemove = new JMenu("  Delete  ");
+		Image imgLoginmnRemove = new ImageIcon(this.getClass().getResource("img/delete.png")).getImage();
+		Image newimgLoginmnRemove = imgLoginmnRemove.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		mnRemove.setIcon(new ImageIcon(newimgLoginmnRemove));
+		mnRemove.setForeground(new Color(204, 0, 0));
 		mnRemove.setBackground(new Color(204, 153, 153));
 		menuBar.add(mnRemove);
 
@@ -121,8 +128,11 @@ public class AdminsTab extends JFrame {
 			}
 		});
 
-		JMenu mnUpdate = new JMenu("Update");
-		mnUpdate.setForeground(new Color(255, 255, 255));
+		JMenu mnUpdate = new JMenu("  Update  ");
+		Image imgLoginmnUpdate = new ImageIcon(this.getClass().getResource("img/update.png")).getImage();
+		Image newimgLoginmnUpdate = imgLoginmnUpdate.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		mnUpdate.setIcon(new ImageIcon(newimgLoginmnUpdate));
+		mnUpdate.setForeground(new Color(204, 0, 0));
 		mnUpdate.setBackground(new Color(204, 153, 153));
 		menuBar.add(mnUpdate);
 
@@ -166,8 +176,11 @@ public class AdminsTab extends JFrame {
 			}
 		});
 
-		JMenu mnHistory = new JMenu("History");
-		mnHistory.setForeground(new Color(255, 255, 255));
+		JMenu mnHistory = new JMenu("  History ");
+		Image imgLoginmnHistory = new ImageIcon(this.getClass().getResource("img/history.png")).getImage();
+		Image newimgLoginmnHistory = imgLoginmnHistory.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		mnHistory.setIcon(new ImageIcon(newimgLoginmnHistory));
+		mnHistory.setForeground(new Color(204, 0, 0));
 		mnHistory.setBackground(new Color(204, 153, 153));
 		menuBar.add(mnHistory);
 
@@ -209,8 +222,11 @@ public class AdminsTab extends JFrame {
 		});
 		mnHistory.add(mntmTeachersHistory);
 
-		JMenu mnExit = new JMenu("Exit");
-		mnExit.setForeground(new Color(255, 255, 255));
+		JMenu mnExit = new JMenu(" Exit     ");
+		Image imgLoginmnExit = new ImageIcon(this.getClass().getResource("img/logout.png")).getImage();
+		Image newimgLoginmnExit = imgLoginmnExit.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		mnExit.setIcon(new ImageIcon(newimgLoginmnExit));
+		mnExit.setForeground(new Color(204, 0, 0));
 		mnExit.setBackground(new Color(204, 153, 153));
 		menuBar.add(mnExit);
 

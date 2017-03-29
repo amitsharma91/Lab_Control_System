@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -31,7 +32,7 @@ public class UpdateStudent extends JFrame implements ActionListener {
 	private int rows_no = 0;
 	private JTextField textField;
 	private JScrollPane scrollPane;
-	private JButton btnDeleteRecord;
+	private JButton updateRecord;
 	private JLabel lblDeleteTeacherRecord;
 	private JLabel lblEnterTeacherId;
 
@@ -90,14 +91,17 @@ public class UpdateStudent extends JFrame implements ActionListener {
 		textField.requestFocusInWindow();
 		textField.setColumns(10);
 
-		btnDeleteRecord = new JButton("Update Record");
-		btnDeleteRecord.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
-		btnDeleteRecord.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
-		btnDeleteRecord.setForeground(new Color(102, 102, 204));
-		btnDeleteRecord.setBackground(new Color(255, 153, 0));
-		btnDeleteRecord.setBounds(379, 265, 132, 32);
-		btnDeleteRecord.addActionListener(this);
-		contentPane.add(btnDeleteRecord);
+		updateRecord = new JButton("Update Record");
+		Image imgLoginbtnbtnupdateRecord = new ImageIcon(this.getClass().getResource("img/update_in.png")).getImage();
+		Image newimgLoginbtnupdateRecord = imgLoginbtnbtnupdateRecord.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		updateRecord.setIcon(new ImageIcon(newimgLoginbtnupdateRecord));
+		updateRecord.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+		updateRecord.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		updateRecord.setForeground(new Color(102, 102, 204));
+		updateRecord.setBackground(new Color(255, 153, 0));
+		updateRecord.setBounds(379, 265, 132, 32);
+		updateRecord.addActionListener(this);
+		contentPane.add(updateRecord);
 
 		lblDeleteTeacherRecord = new JLabel("Update Student Record");
 		lblDeleteTeacherRecord.setForeground(new Color(255, 204, 51));

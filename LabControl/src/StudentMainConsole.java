@@ -98,6 +98,37 @@ public class StudentMainConsole extends JFrame {
 		setVisible(true);
 		System.out.println(getWidth() + " ---- " + getHeight());
 		// ****************************************************************//
+		
+		
+		//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+		//FOR SCREENSHOT
+
+		final Thread t1 = new Thread() {
+			public void run() {
+				try {
+					ClientScreenshot.getscreen("127.0.0.1");
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("Something went wrong at Client-Side while Execution FOR SCREENSHOT");
+				}
+			}
+		};
+		t1.start();
+
+		Thread t2 = new Thread() {
+			public void run() {
+				try {
+					t1.join();
+					ClientScreenshot.sendFile("127.0.0.1");
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("Something went wrong at Client-Side while Execution FOR SENDING FILE");
+				}
+			}
+		};
+		t2.start();
+		
+		//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//		
 
 		// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&//
 		SwingWorker<String, String> worker = new SwingWorker<String, String>() {

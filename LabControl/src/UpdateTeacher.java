@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -87,6 +88,9 @@ public class UpdateTeacher extends JFrame implements ActionListener {
 		textField.setColumns(10);
 
 		JButton btnDeleteRecord = new JButton("Update Record");
+		Image imgLoginbtnbtnupdateRecord = new ImageIcon(this.getClass().getResource("img/update_in.png")).getImage();
+		Image newimgLoginbtnupdateRecord = imgLoginbtnbtnupdateRecord.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		btnDeleteRecord.setIcon(new ImageIcon(newimgLoginbtnupdateRecord));
 		btnDeleteRecord.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
 		btnDeleteRecord.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
 		btnDeleteRecord.setForeground(new Color(102, 102, 204));
